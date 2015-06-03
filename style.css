@@ -1,0 +1,141 @@
+/*
+ * Pure CSS3 Switch Button
+ * Author: Clear
+ * Update: 2015-06-02
+ */
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+/* Menu Button */
+
+.menu-btn {
+	width: 60px;
+	height: 40px;
+	list-style: none;
+	position: relative;
+}
+
+.menu-btn input {
+	width: 60px;
+	height: 40px;
+	position: absolute;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+
+}
+
+.menu-btn input:hover {
+	cursor: pointer;
+}
+
+.menu-btn li {
+	background: #000;
+	width: 60px;
+	height: 2px;
+	position: absolute;
+	-webkit-transition: all .5s;
+	   -moz-transition: all .5s;
+		 -o-transition: all .5s;
+			transition: all .5s;
+}
+
+.middle {
+	top:50%;
+	margin-top: -1px;
+}
+
+.bottom {
+	bottom: 0;
+}
+
+.menu-btn input:checked + .top{
+	-webkit-transform:rotate(45deg);
+	   -moz-transform:rotate(45deg);
+		 -o-transform:rotate(45deg);
+			transform:rotate(45deg);
+	-webkit-transform-origin:5% 0;
+	   -moz-transform-origin:5% 0;
+		 -o-transform-origin:5% 0;
+			transform-origin:5% 0;
+}
+
+.menu-btn input:checked ~ .middle{
+	width: 0;
+}
+
+.menu-btn input:checked ~ .bottom{
+	-webkit-transform:rotate(-45deg);
+	   -moz-transform:rotate(-45deg);
+		 -o-transform:rotate(-45deg);
+			transform:rotate(-45deg);
+	-webkit-transform-origin:5% 100%;
+	   -moz-transform-origin:5% 100%;
+		 -o-transform-origin:5% 100%;
+			transform-origin:5% 100%;
+}
+
+
+/* Switch Button */
+
+.switch {
+	width: 80px;
+	height: 40px;
+}
+
+.switch input {
+	width: 80px;
+	height: 40px;
+	position: absolute;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	z-index: 9;
+}
+
+.switch input:hover {
+	cursor: pointer;
+}
+
+.switch-btn {
+	background: #f0f0f0;
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	position: relative;
+}
+
+.switch-btn span {
+	background: #fff;
+	width: 36px;
+	height: 36px;
+	display: block;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	-webkit-transition: all .5s;
+	   -moz-transition: all .5s;
+		 -o-transition: all .5s;
+			transition: all .5s;
+}
+
+.switch input:checked + .switch-btn span {
+	left: 42px;
+}
+
+.switch input:checked + .switch-btn {
+	background: #32c532;
+}
